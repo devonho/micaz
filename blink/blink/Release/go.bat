@@ -1,0 +1,1 @@
+C:\Work_i2r\nbt_9dof_sensor_sys\test\Prodtest\FlashTool\tools\uisp.exe -dprog=mib510 -dserial=/dev/ttyS6  -dpart=ATmega128  --erase --upload if=blink.srec --verify
