@@ -45,9 +45,9 @@ namespace uispgui
 
             ProcessStartInfo processStartInfo = new ProcessStartInfo();
             processStartInfo.CreateNoWindow = true; 
-            processStartInfo.RedirectStandardOutput = true;
-            processStartInfo.RedirectStandardInput = true;
-            processStartInfo.UseShellExecute = false;
+            processStartInfo.RedirectStandardOutput = false;
+            processStartInfo.RedirectStandardInput = false;
+            processStartInfo.UseShellExecute = true;
             processStartInfo.Arguments = @"-dprog=mib510 -v -dserial=" + selectedPortName + @" -dpart=ATmega128  --erase --upload if=blink.srec --verify";
             //processStartInfo.Arguments = @"--help";
             processStartInfo.FileName = "uisp.exe";
@@ -70,9 +70,9 @@ namespace uispgui
             // then wait for the process to exit
             // then cancel asynchronously reading the output
             process.Start();
-            process.BeginOutputReadLine();
+            //process.BeginOutputReadLine();
             process.WaitForExit();
-            process.CancelOutputRead();
+            //process.CancelOutputRead();
 
             // use the output
             richTextBox1.Text = outputBuilder.ToString();
